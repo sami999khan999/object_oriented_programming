@@ -77,19 +77,130 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //============================================================================================================================================//
 
-// // class
+// // constructor function
 
-// // In JavaScript, a class is a syntactical feature introduced in ECMAScript 2015 (ES6) to make it easier to work with constructor functions and prototype-based inheritance, providing a more familiar syntax for developers coming from class-based object-oriented languages. Despite the class syntax, JavaScript is still prototype-based, and classes are essentially a syntactical sugar over JavaScript's existing prototype-based inheritance model. //
-
-// // ClassName: The name of the class, following the same naming conventions as other JavaScript identifiers. //
-
-// // constructor: The special method that gets called when an instance of the class is created. It is used to initialize the object's properties and can take any number of parameters. //
-
-// // method1, method2, etc.: These are methods that define the behaviors (functions) associated with instances of the class. //
-
-// // Class methods are added to the prototype, and they are shared across all instances of the class, just like when using constructor functions and prototypes. //
+// // A constructor function is a way of creating objects in JavaScript. It is a regular function that is used with the new keyword to create instances of objects. The main purpose of a constructor function is to set up the initial state (properties) of the object being created. The convention is to capitalize the first letter of a constructor function to distinguish it from regular functions. This helps developers identify and recognize constructor functions easily. //
 
 //============================================================================================================================================//
+
+// function Person(nickName, birthYear) {
+//   this.nickName = nickName;
+//   this.birthYear = birthYear;
+
+//   this.ageCalk = function () {
+//     console.log(2023 - birthYear);
+//   };
+// }
+
+// const sami = new Person("Sami", 2003);
+// const jon = new Person("Jhon", 1995);
+
+// console.log(sami);
+// console.log(jon);
+// console.log(Person);
+
+// console.log(sami.__proto__);
+// console.log(jon.__proto__);
+// console.log(Person.prototype);
+
+// console.log(sami instanceof Person);
+// console.log(jon instanceof Person);
+
+// console.log(sami.nickName);
+// console.log(sami.birthYear);
+
+// console.log(jon.nickName);
+// console.log(jon.birthYear);
+
+// sami.ageCalk();
+// jon.ageCalk();
+
+//--------------------------------------------------------------------------------------------------------------------------------------------//
+
+// function Cpu(core, thread) {
+//   this.core = core;
+//   this.thread = thread;
+// }
+
+// const cpu1 = new Cpu(6, 24);
+// const cpu2 = new Cpu(4, 8);
+
+// Cpu.prototype.clockSpeed = function (num) {
+//   return `${(this.core * this.thread) / num}Ghz`;
+// };
+
+// console.log(cpu1.clockSpeed(30));
+// console.log(cpu2.clockSpeed(10));
+
+// console.log(Cpu.prototype);
+// console.log(cpu1.__proto__);
+// console.log(cpu2.__proto__);
+
+//============================================================================================================================================//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//============================================================================================================================================//
+
+// // ES6 Class
+
+// // ES6 (ECMAScript 2015) introduced a new syntax for creating classes in JavaScript, providing a more structured and familiar way to implement object-oriented programming. ES6 classes are a syntactical sugar over the existing prototype-based inheritance and constructor functions, making it easier and cleaner to define classes and work with objects. //
+
+// // Java Script Classes are not HOISTED. //
+// //  Java Script Classes are first-class functions. //
+// // Java Script Classes always uses "use strict" automatically. //
+
+//============================================================================================================================================//
+
+// class Person {
+//   constructor(fullName, birthYear) {
+//     this.fullName = fullName;
+//     this.birthYear = birthYear;
+//   }
+
+//   calkAge() {
+//     return 2023 - this.birthYear;
+//   }
+
+//   greet() {
+//     return `Hello ${this.fullName}`;
+//   }
+// }
+
+// const person1 = new Person("Sami", 2003);
+// const person2 = new Person("Jhon", 1995);
+
+// console.log(person1.calkAge());
+// console.log(person2.calkAge());
+
+// console.log(person1.greet());
+// console.log(person2.greet());
+
+// console.log(Person.prototype);
+// console.log(person1.__proto__.constructor);
+
+//--------------------------------------------------------------------------------------------------------------------------------------------//
+
+// class CinemaHall {
+//   constructor(movieName, seatCount) {
+//     this.movieName = movieName;
+//     this.seatCount = seatCount;
+//     this.audience = [];
+//   }
+
+//   audienceCount(name) {
+//     this.audience.push(name, this.movieName, this.seatCount);
+//   }
+// }
+
+// const sami = new CinemaHall("Jon Wick", 4);
+// const luffi = new CinemaHall("Flim Read", 10);
+
+// sami.audienceCount("Sami");
+// luffi.audienceCount("Luffi");
+
+// console.log(sami.audience);
+// console.log(luffi.audience);
+
+//--------------------------------------------------------------------------------------------------------------------------------------------//
 
 // class Student {
 //   constructor(fullName, birtbYear) {
@@ -165,64 +276,67 @@
 // console.log(deposit1.deposits);
 
 //============================================================================================================================================//
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//============================================================================================================================================//
 
-// // constructor function
+// // static method
 
-// // A constructor function is a way of creating objects in JavaScript. It is a regular function that is used with the new keyword to create instances of objects. The main purpose of a constructor function is to set up the initial state (properties) of the object being created. The convention is to capitalize the first letter of a constructor function to distinguish it from regular functions. This helps developers identify and recognize constructor functions easily. //
-
-//============================================================================================================================================//
-
-// function Person(nickName, birthYear) {
-//   this.nickName = nickName;
-//   this.birthYear = birthYear;
-
-//   this.ageCalk = function () {
-//     console.log(2023 - birthYear);
-//   };
-// }
-
-// const sami = new Person("Sami", 2003);
-// const jon = new Person("Jhon", 1995);
-
-// console.log(sami);
-// console.log(jon);
-// console.log(Person);
-
-// console.log(sami.__proto__);
-// console.log(jon.__proto__);
-// console.log(Person.prototype);
-
-// console.log(sami instanceof Person);
-// console.log(jon instanceof Person);
-
-// console.log(sami.nickName);
-// console.log(sami.birthYear);
-
-// console.log(jon.nickName);
-// console.log(jon.birthYear);
-
-// sami.ageCalk();
-// jon.ageCalk();
+// // In object-oriented programming, a static method is a method that belongs to the class itself rather than to instances of the class (objects). It is a method that is associated with the class definition and can be called directly on the class, without needing to create an instance of the class. In JavaScript, you can define static methods in ES6 classes using the static keyword. Static methods are useful for utility functions or operations that are not specific to any particular instance but are related to the class as a whole. //
 
 //--------------------------------------------------------------------------------------------------------------------------------------------//
 
-function Cpu(core, thread) {
-  this.core = core;
-  this.thread = thread;
-}
+// class TechShop {
+//   constructor(cpu, gpu, ram) {
+//     this.cpu = cpu;
+//     this.gpu = gpu;
+//     this.ram = ram;
+//   }
 
-const cpu1 = new Cpu(6, 24);
-const cpu2 = new Cpu(4, 8);
+//   pcPrice() {
+//     return this.cpu + this.gpu + this.ram;
+//   }
 
-Cpu.prototype.clockSpeed = function (num) {
-  return `${(this.core * this.thread) / num}Ghz`;
+//   static profit() {
+//     return 45629;
+//   }
+// }
+
+// const buyer = new TechShop(56000, 360000, 24000);
+
+// console.log(buyer.pcPrice());
+
+// // a method defined using static can only be uesed by the class. //
+// console.log(TechShop.profit());
+
+//============================================================================================================================================//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//============================================================================================================================================//
+
+// // object.create()
+
+// // Object.create() is a static method in JavaScript that creates a new object with a specified prototype object. It provides an alternative way to create objects and set up prototypal inheritance without using constructor functions or classes. //
+
+//============================================================================================================================================//
+
+const Person = {
+  calkAge() {
+    return 2023 - this.birthYear;
+  },
 };
 
-console.log(cpu1.clockSpeed(30));
-console.log(cpu2.clockSpeed(10));
+const person1 = Object.create(Person);
+const person2 = Object.create(Person);
 
-console.log(Cpu.prototype);
-console.log(cpu1.__proto__);
-console.log(cpu2.__proto__);
+person1.fullName = "Sami";
+person1.birthYear = 2003;
+
+person2.fullName = "Jhan";
+person2.birthYear = 1996;
+
+console.log(person1.calkAge());
+console.log(person2.calkAge());
+
+console.log(Person);
+console.log(person1.__proto__);
+console.log(person2.__proto__);
+
+console.log(person1);
+console.log(person2);
