@@ -9,6 +9,24 @@
 // Prototype -
 // Class -
 // Inheritance -
+// abstraction -
+// encapsulation -
+// inheritance -
+// polymorphism -
+// }
+
+// constructor function -
+
+// ES6 Class {
+// static method -
+// }
+
+// object.create() -
+
+// inharitenct between multiple classes {
+// constractor function -
+// ES6 classes -
+// Object.create() -
 // }
 
 //============================================================================================================================================//
@@ -43,35 +61,33 @@
 
 // // In JavaScript, you can achieve inheritance by setting up the prototype chain. You can create a new constructor function that inherits from another constructor function's prototype using Object.create() or the class syntax.  //
 
-//============================================================================================================================================//
+//--------------------------------------------------------------------------------------------------------------------------------------------//
 
-// // abstraction
+// // abstraction:
 
 // // Abstraction is one of the key principles of object-oriented programming (OOP), and it is also applicable in JavaScript, which is a multi-paradigm language that supports OOP concepts. Abstraction allows you to hide the complexity of an object and only expose the essential features or behaviors that are relevant to the context of the application. //
 
 //--------------------------------------------------------------------------------------------------------------------------------------------//
 
-// // encapsulation
+// // encapsulation:
 
 // // Encapsulation is one of the fundamental principles of object-oriented programming (OOP), and it's also applicable in JavaScript. Encapsulation refers to the bundling of data (properties) and methods (functions) that operate on that data within a single unit called a class. The internal details of the object are hidden from the outside world, and only the public interface (public methods) is accessible to interact with the object. //
 
 //--------------------------------------------------------------------------------------------------------------------------------------------//
 
-// // inheritance
+// // inheritance:
 
 // // Inheritance is a fundamental concept in object-oriented programming (OOP) that allows one class to inherit properties and methods from another class. In JavaScript, inheritance can be achieved using prototype-based inheritance. Prototype-based inheritance allows objects (instances) to inherit from other objects (prototypes). Each object in JavaScript has an internal property called [[Prototype]], which refers to its prototype object. When you access a property or method on an object, and it doesn't exist on the object itself, JavaScript will look for it in its prototype chain, going up the chain until it finds the property or until it reaches the end of the chain (usually Object.prototype). //
 
 //--------------------------------------------------------------------------------------------------------------------------------------------//
 
-// // polymorphism
+// // polymorphism:
 
 // // Polymorphism is another important concept in object-oriented programming (OOP), and it refers to the ability of different objects to be treated as instances of a common superclass, while also exhibiting their unique behaviors through overridden methods. In JavaScript, polymorphism can be achieved through method overriding and method overloading. //
 
-// // Method Overriding:
-// // Method overriding occurs when a subclass provides a specific implementation for a method that is already defined in its superclass. This allows the subclass to override or replace the behavior of the method inherited from the superclass. //
+// // Method Overriding - Method overriding occurs when a subclass provides a specific implementation for a method that is already defined in its superclass. This allows the subclass to override or replace the behavior of the method inherited from the superclass. //
 
-// // Method Overloading (using a workaround):
-// // JavaScript does not support method overloading directly (having multiple methods with the same name but different parameters). However, we can achieve method overloading using a workaround by checking the number or type of arguments passed to the method. //
+// // Method Overloading (using a workaround) - JavaScript does not support method overloading directly (having multiple methods with the same name but different parameters). However, we can achieve method overloading using a workaround by checking the number or type of arguments passed to the method. //
 
 //============================================================================================================================================//
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -316,27 +332,162 @@
 
 //============================================================================================================================================//
 
-const Person = {
-  calkAge() {
-    return 2023 - this.birthYear;
-  },
-};
+// const Person = {
+//   calkAge() {
+//     return 2023 - this.birthYear;
+//   },
+// };
 
-const person1 = Object.create(Person);
-const person2 = Object.create(Person);
+// const person1 = Object.create(Person);
+// const person2 = Object.create(Person);
 
-person1.fullName = "Sami";
-person1.birthYear = 2003;
+// person1.fullName = "Sami";
+// person1.birthYear = 2003;
 
-person2.fullName = "Jhan";
-person2.birthYear = 1996;
+// person2.fullName = "Jhan";
+// person2.birthYear = 1996;
 
-console.log(person1.calkAge());
-console.log(person2.calkAge());
+// console.log(person1.calkAge());
+// console.log(person2.calkAge());
 
-console.log(Person);
-console.log(person1.__proto__);
-console.log(person2.__proto__);
+// console.log(Person);
+// console.log(person1.__proto__);
+// console.log(person2.__proto__);
 
-console.log(person1);
-console.log(person2);
+// console.log(person1);
+// console.log(person2);
+
+//--------------------------------------------------------------------------------------------------------------------------------------------//
+
+// const Person = {
+//   clakAge() {
+//     return 2023 - this.birthYear;
+//   },
+
+//   getParam(firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   },
+// };
+
+// const person1 = Object.create(Person);
+// person1.getParam("Sami", 2003);
+
+// console.log(person1);
+// console.log(person1.clakAge());
+
+//============================================================================================================================================//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//============================================================================================================================================//
+
+// // inharitenct between multiple classes
+
+// // Inheritance between multiple classes, also known as hierarchical inheritance or multilevel inheritance, refers to a scenario in object-oriented programming where a subclass inherits from another subclass, creating a chain of inheritance. //
+
+//============================================================================================================================================//
+
+// // constractor function
+
+// // class1
+// function Person(fullName, birthYear) {
+//   this.fullName = fullName;
+//   this.birthYear = birthYear;
+// }
+
+// Person.prototype.calkAge = function () {
+//   return 2023 - this.birthYear;
+// };
+
+// const person1 = new Person("Sami", 2003);
+
+// console.log(person1);
+// console.log(person1.fullName);
+// console.log(person1.calkAge());
+
+// // class2
+// function Student(fullName, birtbYear, departmant) {
+//   Person.call(this, fullName, birtbYear);
+//   // we called fullName and birthYear property from Peron class. //
+//   this.departmant = departmant;
+// }
+
+// Student.prototype = Object.create(Person.prototype);
+// // hear we licked Student class with Person class. //
+// // it's better not to creat any methods in sub class. //
+
+// const student1 = new Student("Jhon", 1995, "CSC");
+
+// console.log(student1);
+// console.log(student1.fullName);
+// console.log(student1.departmant);
+// console.log(student1.calkAge());
+
+//============================================================================================================================================//
+
+// // ES6 classes
+
+// class player {
+//   constructor(nickName, jerseyNum, rating) {
+//     this.nickName = nickName;
+//     this.jerseyNum = jerseyNum;
+//     this.rating = rating;
+//     this.playersJersey();
+//   }
+
+//   playersJersey() {
+//     console.log(`${this.nickName}'s jersey number is ${this.jerseyNum}`);
+//   }
+// }
+
+// const ronaltho = new player("Ronaltho", 9, 94);
+
+// console.log(ronaltho);
+// console.log(ronaltho.__proto__);
+// console.log(ronaltho.nickName);
+// ronaltho.playersJersey();
+
+// class Captain extends player {
+//   // when we use (extends) to inherite properties from Player class Captain class looses it's this value
+//   constructor(nickName, jerseyNum, rating, bandCol) {
+//     super(nickName, jerseyNum, rating);
+//     this.bandCol = bandCol;
+//   }
+// }
+
+// const messi = new Captain("Messi", 10, 92, "green");
+
+// console.log(messi);
+// console.log(messi.__proto__);
+// console.log(messi.rating);
+// messi.playersJersey();
+
+//============================================================================================================================================//
+
+// // Object.create()
+
+// const Person = {
+//   clakAge() {
+//     return 2023 - this.birthYear;
+//   },
+
+//   getParam(firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   },
+// };
+
+// const person1 = Object.create(Person);
+// person1.getParam("Sami", 2003);
+
+// console.log(person1);
+// console.log(person1.clakAge());
+
+// const person2 = Object.create(person1);
+// person2.getParam("Jhon", 1995);
+
+// console.log(person2);
+// console.log(person2.clakAge());
+
+// console.log(Person)
+// console.log(person1.__proto__);
+// console.log(person2.__proto__);
