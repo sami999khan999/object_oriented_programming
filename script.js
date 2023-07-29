@@ -23,7 +23,7 @@
 
 // object.create() -
 
-// inharitenct between multiple classes {
+// inharitence between multiple classes {
 // constractor function -
 // ES6 classes -
 // Object.create() -
@@ -54,12 +54,6 @@
 // // Class:
 
 // // ES6 introduced a more concise and class-based syntax for creating constructor functions. Under the hood, classes still use prototypes for inheritance, but the syntax is more familiar to developers coming from class-based OOP languages. //
-
-//--------------------------------------------------------------------------------------------------------------------------------------------//
-
-// // Inheritance:
-
-// // In JavaScript, you can achieve inheritance by setting up the prototype chain. You can create a new constructor function that inherits from another constructor function's prototype using Object.create() or the class syntax.  //
 
 //--------------------------------------------------------------------------------------------------------------------------------------------//
 
@@ -380,7 +374,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //============================================================================================================================================//
 
-// // inharitenct between multiple classes
+// // inharitence between multiple classes
 
 // // Inheritance between multiple classes, also known as hierarchical inheritance or multilevel inheritance, refers to a scenario in object-oriented programming where a subclass inherits from another subclass, creating a chain of inheritance. //
 
@@ -431,7 +425,6 @@
 //     this.nickName = nickName;
 //     this.jerseyNum = jerseyNum;
 //     this.rating = rating;
-//     this.playersJersey();
 //   }
 
 //   playersJersey() {
