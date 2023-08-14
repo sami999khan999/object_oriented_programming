@@ -103,27 +103,27 @@
 // }
 
 // const sami = new Person("Sami", 2003);
-// const jon = new Person("Jhon", 1995);
+// const jhon = new Person("Jhon", 1995);
 
 // console.log(sami);
-// console.log(jon);
+// console.log(jhon);
 // console.log(Person);
 
 // console.log(sami.__proto__);
-// console.log(jon.__proto__);
+// console.log(jhon.__proto__);
 // console.log(Person.prototype);
 
 // console.log(sami instanceof Person);
-// console.log(jon instanceof Person);
+// console.log(jhon instanceof Person);
 
 // console.log(sami.nickName);
 // console.log(sami.birthYear);
 
-// console.log(jon.nickName);
-// console.log(jon.birthYear);
+// console.log(jhon.nickName);
+// console.log(jhon.birthYear);
 
 // sami.ageCalk();
-// jon.ageCalk();
+// jhon.ageCalk();
 
 //--------------------------------------------------------------------------------------------------------------------------------------------//
 
@@ -250,11 +250,16 @@
 // }
 
 // const computer1 = new Computer();
+// const computer2 = new Computer();
 
 // computer1.depositMoney(1000);
 // computer1.depositMoney(2000);
 // console.log(computer1.bank);
 // console.log(computer1.cpuClockSpeed(4, 8));
+
+// computer2.depositMoney(10);
+// computer2.depositMoney(20);
+// console.log(computer2.bank);
 
 //--------------------------------------------------------------------------------------------------------------------------------------------//
 
@@ -374,7 +379,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //============================================================================================================================================//
 
-// // inharitence between multiple classes
+// // inheritence between multiple classes
 
 // // Inheritance between multiple classes, also known as hierarchical inheritance or multilevel inheritance, refers to a scenario in object-oriented programming where a subclass inherits from another subclass, creating a chain of inheritance. //
 
@@ -440,7 +445,7 @@
 // ronaltho.playersJersey();
 
 // class Captain extends player {
-//   // when we use (extends) to inherite properties from Player class Captain class looses it's this value
+//   // when we use (extends) to inherite properties from Player class Captain class looses it's this value //
 //   constructor(nickName, jerseyNum, rating, bandCol) {
 //     super(nickName, jerseyNum, rating);
 //     this.bandCol = bandCol;
@@ -481,6 +486,6 @@
 // console.log(person2);
 // console.log(person2.clakAge());
 
-// console.log(Person)
+// console.log(Person);
 // console.log(person1.__proto__);
 // console.log(person2.__proto__);
